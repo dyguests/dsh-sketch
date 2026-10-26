@@ -1,0 +1,56 @@
+{
+  "name": "dsh-sketch-draft",
+  "version": "1.0.0",
+  "description": "DSH 永久插件：输入框「+」旁的草图按钮 —— 现画一张，直接作为图片附件注入对话；当前模型不收图时先实时查模型表、切到视觉模型再注入，并给一键切回。判定全程实时（会话投影的 pending 模型 + 宿主模型表的 inputModalities），可用不上 DET 独立运行。Permanent DeepSeek Harness plugin: an inline sketch button that draws on a canvas and injects the picture into the conversation as a real image attachment; when the current model takes no images it re-checks the live model table, switches to a vision model, injects, and offers one-click switch-back. Runs standalone, fully independent of DET.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-typert-protocol": "^0.1.7-rc.2",
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "author": "L2959159224@Outlook.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LLYlab/DSHSketchDraft.git"
+  },
+  "homepage": "https://github.com/LLYlab/DSHSketchDraft#readme",
+  "bugs": {
+    "url": "https://github.com/LLYlab/DSHSketchDraft/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "plugin",
+    "sketch",
+    "draft",
+    "canvas",
+    "draw",
+    "vision",
+    "image",
+    "attachment"
+  ]
+}

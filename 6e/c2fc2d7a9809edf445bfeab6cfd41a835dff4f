@@ -1,0 +1,20 @@
+CHANGELOG.md
+  h_3553f4e32d4a9f 3-13
+README.md
+  h_3553f4e32d4a9f 93,102-108
+docs/marketplace-submission.md
+  h_3553f4e32d4a9f 26,56,58-66,72-73
+package.json
+  h_3553f4e32d4a9f 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6ec2fc2d7a9809edf445bfeab6cfd41a835dff4f",
+  "prompts": {},
+  "humans": {
+    "h_3553f4e32d4a9f": {
+      "author": "fanhl <dyguests@qq.com>"
+    }
+  }
+}

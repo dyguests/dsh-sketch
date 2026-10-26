@@ -1,0 +1,26 @@
+CHANGELOG.md
+  h_3553f4e32d4a9f 3-34
+README.md
+  h_3553f4e32d4a9f 1,3,5,7-8,16-17,42,49,51,67,70,75,81,87-88,122
+cordis.patch.yml
+  h_3553f4e32d4a9f 1,4,11-12
+lib/client.js
+  h_3553f4e32d4a9f 1,17,20,29,39,42-43,45,47,50-54,56-58,60-63,65-69,71,271-272,275,282,285,291,293,299,305,308,320,324,327,330,335,342,344,469,473,499,529
+lib/index.js
+  h_3553f4e32d4a9f 1,16
+package.json
+  h_3553f4e32d4a9f 2-4,37,39,41
+test/bundle.test.mjs
+  h_3553f4e32d4a9f 103-104,128,151
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "10f8abb2df5064af7edf79f0e5cd3847713312cc",
+  "prompts": {},
+  "humans": {
+    "h_3553f4e32d4a9f": {
+      "author": "fanhl <dyguests@qq.com>"
+    }
+  }
+}

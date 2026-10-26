@@ -51,8 +51,29 @@ function loadBundle() {
 
 function makeCtx() {
   const registered = []
+  const commands = []
   return {
     registered,
+    commands,
+    // cordis 服务注入：本插件只用 commandUi 一个
+    inject(names, factory) {
+      assert.deepEqual(names, ['commandUi'])
+      factory({
+        get(name) {
+          assert.equal(name, 'commandUi')
+          return {
+            register(contribution) {
+              commands.push(contribution)
+              return () => {}
+            },
+          }
+        },
+        effect(run) {
+          run()
+          return () => {}
+        },
+      })
+    },
     slots: {
       inject(name, factory) {
         assert.equal(name, 'conversation.input.left')
@@ -85,7 +106,19 @@ test('bundle 身份与上游一致（同一套装载契约）', () => {
   assert.deepEqual(exports.inject, ['slots', 'sessions'])
 })
 
-test('apply() 往 conversation.input.left 注册一个按钮', () => {
+test('apply() 往「+」菜单注册一个 sketch 动作', () => {
+  const ctx = makeCtx()
+  exports.apply(ctx)
+  assert.equal(ctx.commands.length, 1)
+  const action = ctx.commands[0]
+  assert.equal(action.name, 'sketch')
+  assert.equal(action.ui.kind, 'action')
+  assert.equal(typeof action.ui.run, 'function')
+  assert.equal(typeof action.label(), 'string')
+  assert.equal(action.available({ sessionId: 'any' }), true)
+})
+
+test('画布仍挂在 conversation.input.left 上（菜单唤起它）', () => {
   const ctx = makeCtx()
   exports.apply(ctx)
   assert.equal(ctx.registered.length, 1)

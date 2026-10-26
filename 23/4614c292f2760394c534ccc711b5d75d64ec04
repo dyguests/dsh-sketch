@@ -1,0 +1,16 @@
+CHANGELOG.md
+  h_3553f4e32d4a9f 5-8
+README.md
+  h_3553f4e32d4a9f 5-10,13-14,105-110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "234614c292f2760394c534ccc711b5d75d64ec04",
+  "prompts": {},
+  "humans": {
+    "h_3553f4e32d4a9f": {
+      "author": "fanhl <dyguests@qq.com>"
+    }
+  }
+}

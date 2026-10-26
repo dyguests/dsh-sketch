@@ -1,5 +1,18 @@
 # Changelog
 
+## 文档更新（未发版）— npm 徽章与安装命令
+
+`dsh-sketch@1.4.2` 已经发到 npm，README 跟上。**这次只有文档变化，不发新版本**，
+npm 上仍然是 1.4.2。
+
+- README 顶部加三枚徽章：npm 版本（自动跟随已发布版本）、dsh 版本、许可证。
+- 安装命令改为 npm 优先：`dsh plugin --profile web add dsh-sketch`；
+  GitHub 源码安装与本地目录作为备选保留。
+- 删掉「还没发 npm」的说明（已经不成立了）。
+- 提交文案里的安装命令同步成 npm 形式 —— 插件中心只认这种。
+
+---
+
 ## v1.4.2 — 暂缓 npm，先走 GitHub 分发
 
 `npmjs.com` 在这台机器上被 Cloudflare 挡着（403），拿不到 token，所以先把分发切回

@@ -23,7 +23,7 @@
 界面与体验
 
 ### 安装命令
-dsh plugin --profile web add github:dyguests/dsh-sketch
+dsh plugin --profile web add dsh-sketch
 
 ### 兼容与运行要求
 dsh >= 0.2.0（package.json 里 `engines.dsh` 为 `>=0.2.0-0 <0.3.0`），已在 0.2.1-rc.3 实测装载与使用；
@@ -55,28 +55,16 @@ MIT
 
 ## 现在还差什么
 
-1. **给仓库加 topic**（必须）：GitHub 仓库页 → 右侧 About 旁齿轮 → Topics 填
-   `dsh-plugin`。不加的话爬虫扫不到，提了也不会被收录。
-
-2. **开 Issue**：正文已在上文，粘到
+1. **开 Issue**：正文已在上文，粘到
    <https://github.com/dshplugin/dsh-plugin-hub/issues/new>。
+   仓库的 `dsh-plugin` topic 已经加好了。
 
-3. **npm（暂缓，不影响收录）**：只有发了 npm 才会出现在 DSH 内的「插件中心」。
-   现在 `npmjs.com` 从这台机器访问被 Cloudflare 挡着（403），拿不到 token，
-   所以先用 GitHub 源码安装。哪天通了再补：
-   ```bash
-   npm login --registry=https://registry.npmjs.org
-   npm publish --registry=https://registry.npmjs.org
+2. **收录后加徽章**：详情页地址形如
+   `https://dsh-plugin.org/zh/plugins/dyguests/dsh-sketch`，到时候把 README 顶部的
+   三枚徽章后面再接一枚：
+
+   ```markdown
+   [![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/dyguests/dsh-sketch)
    ```
-   注意本机 npm registry 指向的是 `registry.npmmirror.com`（只读镜像），
-   必须显式带 `--registry=https://registry.npmjs.org`。发完不用重新提交，
-   站点刷新时会自动更新为 npm 安装命令。
 
-## 收录之后
-
-详情页地址形如 `https://dsh-plugin.org/zh/plugins/dyguests/dsh-sketch`，
-可以在 README 顶部加收录徽章：
-
-```markdown
-[![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/dyguests/dsh-sketch)
-```
+npm 已经发布（`dsh-sketch@1.4.2`），安装命令就是上面那条，插件中心能认。

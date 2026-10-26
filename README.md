@@ -1,5 +1,9 @@
 # dsh-sketch
 
+[![npm version](https://img.shields.io/npm/v/dsh-sketch?label=npm&color=cb3837)](https://www.npmjs.com/package/dsh-sketch)
+[![dsh](https://img.shields.io/badge/dsh-%3E%3D0.2.0-6366f1)](https://deepseek.com/harness)
+[![license](https://img.shields.io/npm/l/dsh-sketch?color=blue)](./LICENSE)
+
 > 输入框「+」菜单里的一个画板：**随手画一张，直接作为图片附件放进对话。**
 
 DeepSeek Harness（dsh）插件。前身是 LLYlab 的 `dsh-sketch-draft` 1.0.0 —— 本仓库
@@ -90,7 +94,10 @@ const ENDPOINT_SEGMENT_PATTERN = /^[A-Za-z0-9_$.-]+$/   // 不含 "/"
 ## 安装
 
 ```bash
-# 从 GitHub 源码安装（当前方式）
+# 从 npm 安装（推荐）
+dsh plugin --profile web add dsh-sketch
+
+# 或直接从 GitHub 源码
 dsh plugin --profile web add github:dyguests/dsh-sketch
 
 # 本地目录（改代码时用，改完不用重装）
@@ -98,13 +105,6 @@ dsh plugin --profile web add file:/absolute/path/to/dsh-sketch
 ```
 
 装完**重启 dsh**（宿主半区只在启动时装载），刷新页面。
-
-> **还没发 npm**（`package.json` 里已经准备好，`dsh-sketch` 这个名字也还空着）。
-> 所以现在在 DSH 内的「插件中心」搜不到它；用上面的 GitHub 命令安装不受影响。
-> 发布之后下面这条才会生效：
-> ```bash
-> dsh plugin --profile web add dsh-sketch
-> ```
 
 兼容：dsh `>=0.2.0`（`package.json` 的 `engines.dsh` 写的是 `>=0.2.0-0 <0.3.0`，
 覆盖 0.2.x 的 prerelease）。纯前端插件，不挑平台。

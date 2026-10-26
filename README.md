@@ -7,6 +7,8 @@ DeepSeek Harness（dsh）插件。这是 [LLYlab/DSHSketchDraft](https://github.
 dsh 0.2.1 上已经整条链失效（见下）。
 
 - 上游 1.0.0 由 LLYlab 编写，MIT，见 [LICENSE](./LICENSE)
+- **上游 1.0.0 的源码取自 npm：<https://www.npmjs.com/package/dsh-sketch-draft>**
+  （`dsh-sketch-draft-1.0.0.tgz`，发布于 2026-09-29）—— 见下方「源码来源」
 - 本 fork 的改动见 [CHANGELOG.md](./CHANGELOG.md) 的 **1.1.0**
 - 本仓库的第一个 commit 是上游原样代码，之后的 commit 才是我改的，方便逐行对照
 
@@ -85,6 +87,26 @@ dsh plugin --profile web add file:/absolute/path/to/dsh-sketch-draft
 - 画布是自包含的预打包 bundle（`window.__ModuleLoader__.load` 的 lazy CJS 形态），
   改代码直接改 `lib/client.js`，不需要构建步骤。
 
+## 源码来源
+
+本仓库第一个 commit（`da88951`，原样上游代码）**不是从 GitHub clone 的**，而是取自
+npm 上发布的包：
+
+| 项目 | 值 |
+|---|---|
+| npm 页面 | <https://www.npmjs.com/package/dsh-sketch-draft> |
+| 包文件 | `https://registry.npmjs.org/dsh-sketch-draft/-/dsh-sketch-draft-1.0.0.tgz` |
+| 版本 / 发布 | `1.0.0`，2026-09-29 |
+| 作者 / 许可 | LLYlab，MIT（`Copyright (c) 2026 LLYlab`） |
+
+原因：建这个 fork 的时候，上游 GitHub 仓库（<https://github.com/LLYlab/DSHSketchDraft>）
+在那台机器上连不通 —— `github.com:443` 直接超时，`raw.githubusercontent.com` 对该仓库
+返回 404。于是取 npm tarball：**这正是 dsh 实际加载的那份字节**，内容上与已发布版本
+一致，只是不含上游仓库里没打进包的文件（例如它的单元测试）。
+
+包里包含：`package.json`、`cordis.patch.yml`、`README.md`、`CHANGELOG.md`、`LICENSE`、
+`lib/index.js`、`lib/client.js`。本仓库的目录结构与之一一对应。
+
 ## 许可
 
-MIT。上游版权归 LLYlab（见 [LICENSE](./LICENSE)）；本 fork 的改动物保留同样的许可。
+MIT。上游版权归 LLYlab（见 [LICENSE](./LICENSE)）；本 fork 的改动保留同样的许可。

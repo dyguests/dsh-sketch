@@ -2,13 +2,16 @@
 
 > 输入框「+」旁边的一个小铅笔：**现画一张，直接作为图片附件放进对话。**
 
-DeepSeek Harness（dsh）插件。这是 [LLYlab/DSHSketchDraft](https://github.com/LLYlab/DSHSketchDraft)
-1.0.0 的 fork：**把图片交付从宿主 typert 端点改成纯客户端**，因为上游那套端点在
-dsh 0.2.1 上已经整条链失效（见下）。
+DeepSeek Harness（dsh）插件。这是 LLYlab 的 `dsh-sketch-draft` 1.0.0 的 fork：
+**把图片交付从宿主 typert 端点改成纯客户端**，因为上游那套端点在 dsh 0.2.1 上已经
+整条链失效（见下）。
+
+> 上游的 GitHub 仓库 `LLYlab/DSHSketchDraft` **已经找不到了**，所以本仓库的第一个
+> commit 是从 npm 上发布的包里取的，不是 clone 的 —— 详见「[源码来源](#源码来源)」。
 
 - 上游 1.0.0 由 LLYlab 编写，MIT，见 [LICENSE](./LICENSE)
-- **上游 1.0.0 的源码取自 npm：<https://www.npmjs.com/package/dsh-sketch-draft>**
-  （`dsh-sketch-draft-1.0.0.tgz`，发布于 2026-09-29）—— 见下方「源码来源」
+- 1.0.0 的源码取自 npm：<https://www.npmjs.com/package/dsh-sketch-draft>
+  （`dsh-sketch-draft-1.0.0.tgz`，发布于 2026-09-29）
 - 本 fork 的改动见 [CHANGELOG.md](./CHANGELOG.md) 的 **1.1.0**
 - 本仓库的第一个 commit 是上游原样代码，之后的 commit 才是我改的，方便逐行对照
 
@@ -99,10 +102,12 @@ npm 上发布的包：
 | 版本 / 发布 | `1.0.0`，2026-09-29 |
 | 作者 / 许可 | LLYlab，MIT（`Copyright (c) 2026 LLYlab`） |
 
-原因：建这个 fork 的时候，上游 GitHub 仓库（<https://github.com/LLYlab/DSHSketchDraft>）
-在那台机器上连不通 —— `github.com:443` 直接超时，`raw.githubusercontent.com` 对该仓库
-返回 404。于是取 npm tarball：**这正是 dsh 实际加载的那份字节**，内容上与已发布版本
-一致，只是不含上游仓库里没打进包的文件（例如它的单元测试）。
+原因：**上游仓库 `LLYlab/DSHSketchDraft` 已经找不到了。**
+`raw.githubusercontent.com` 对该仓库的任何文件都返回 404（`main`、`master` 两个分支
+都试过），`github.com:443` 也连不通（`git ls-remote` 连了 75 秒后超时）。clone 不到
+上游，就只能拿它发在 npm 上的包当基线 —— 这一版是发布产物，**正是 dsh 实际加载的
+那份字节**，内容与已发布版本一致；代价是上游仓库里没有打进包的文件（例如它的单元
+测试 `tests/sketch-draft.test.mjs`）这里也没有。
 
 包里包含：`package.json`、`cordis.patch.yml`、`README.md`、`CHANGELOG.md`、`LICENSE`、
 `lib/index.js`、`lib/client.js`。本仓库的目录结构与之一一对应。

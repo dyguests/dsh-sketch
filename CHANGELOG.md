@@ -2,8 +2,10 @@
 
 ## v1.1.0 — 换掉交付路径，让它在 dsh 0.2.1 上真的能导入
 
-**这是一个 fork**（https://github.com/dyguests/dsh-sketch-draft），基于上游
-[LLYlab/DSHSketchDraft](https://github.com/LLYlab/DSHSketchDraft) 1.0.0。上游的设计
+**这是一个 fork**（https://github.com/dyguests/dsh-sketch-draft），基于上游 LLYlab 的
+`dsh-sketch-draft` 1.0.0。上游的 GitHub 仓库 `LLYlab/DSHSketchDraft` 已经找不到了，
+基线取自 npm 上的发布包（<https://www.npmjs.com/package/dsh-sketch-draft>），
+详见 README 的「源码来源」。上游的设计
 （实时判定模型是否收图、自动切视觉模型）保留在 git 历史里，本版只是把**已经失效的
 那一层**换掉。
 

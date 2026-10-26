@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.3.1 — README 补截图和功能清单
+
+只改文档，没有代码变动。
+
+- `docs/menu.png`：「+」菜单里的「画一张」，带图标和右侧说明
+- `docs/canvas.png`：点开之后的画布
+- README 新增「截图」「功能」两节，把这一版到底能给什么写清楚：
+  「+」菜单入口 / `/sketch`、画布（5 色 4 档线宽、撤销清空、Esc 关闭）、
+  PNG 作为图片附件进输入框、附件被拒时降级下载、跟随界面语言、零依赖纯客户端
+- `package.json` 的 `files` 加上 `docs`，发 npm 时截图跟着走
+
+---
+
 ## v1.3.0 — 改名为 dsh-sketch
 
 包名 `dsh-sketch-draft` → **`dsh-sketch`**，仓库同步改为

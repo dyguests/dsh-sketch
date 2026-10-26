@@ -1,6 +1,6 @@
 {
   "name": "dsh-sketch",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "DSH 插件：输入框「+」菜单里的画板，随手画一张直接作为图片附件放进对话。纯客户端交付（conversation.createDrafts + composer.addAttachments），不依赖宿主 typert 端点，因此在 dsh 0.2.x 上不会出现「support 端点不可用」。前身是 LLYlab 的 dsh-sketch-draft。",
   "type": "module",
   "main": "lib/index.js",
@@ -15,7 +15,8 @@
     "cordis.patch.yml",
     "README.md",
     "CHANGELOG.md",
-    "LICENSE"
+    "LICENSE",
+    "docs"
   ],
   "keywords": [
     "dsh",

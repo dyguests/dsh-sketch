@@ -1,0 +1,20 @@
+CHANGELOG.md
+  h_3553f4e32d4a9f 3-32
+README.md
+  h_3553f4e32d4a9f 29-33,42-43
+lib/client.js
+  h_3553f4e32d4a9f 38-39,44-45,48,50-54,57-62,64-66,68-69,71-76,78-79
+package.json
+  h_3553f4e32d4a9f 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "95921f25b479f4e47c80eefb529e8a82d24e1c5a",
+  "prompts": {},
+  "humans": {
+    "h_3553f4e32d4a9f": {
+      "author": "fanhl <dyguests@qq.com>"
+    }
+  }
+}

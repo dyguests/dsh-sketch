@@ -1,0 +1,75 @@
+# 提交到 dsh-plugin.org 的收录文案
+
+> 依据 <https://dsh-plugin.org/zh/submit> 的模板填写。发完 npm、加完 topic 后，
+> 打开 <https://github.com/dshplugin/dsh-plugin-hub/issues/new> 新建 Issue，
+> 标题和正文直接粘下面的内容。
+
+## 标题
+
+```
+[插件提交] dyguests/dsh-sketch — 输入框「+」菜单里画一张，直接作为图片附件进对话
+```
+
+## 正文
+
+````markdown
+### 仓库地址
+<https://github.com/dyguests/dsh-sketch>
+
+### 一句话价值
+在 DSH 输入框的「+」菜单里加一个画板：随手画一张，直接作为图片附件放进对话，不用切到别的 app。
+
+### 能力分类
+界面与体验
+
+### 安装命令
+dsh plugin --profile web add dsh-sketch
+
+### 兼容与运行要求
+dsh >= 0.2.0（package.json 里 `engines.dsh` 为 `>=0.2.0-0 <0.3.0`），已在 0.2.1-rc.3 实测装载与使用；
+纯前端插件，无平台限制，不依赖任何外部服务或 API key。
+
+### 许可证
+MIT
+
+### 截图 / 演示
+- 入口（「+」菜单里的「画一张」）：https://github.com/dyguests/dsh-sketch/blob/main/docs/menu.png
+- 画布：https://github.com/dyguests/dsh-sketch/blob/main/docs/canvas.png
+- 深色外观：https://github.com/dyguests/dsh-sketch/blob/main/docs/canvas-dark.png
+
+### 补充说明
+- 纯客户端交付：图片通过 `conversation.createDrafts()` + `composer.addAttachments()` 进输入框，
+  不注册宿主端点、不开 HTTP 路由，不需要额外权限。
+- 前身是 LLYlab 的 `dsh-sketch-draft` 1.0.0；那版的宿主 typert 端点在 dsh 0.2.1 上整条失效
+  （RPC endpoint 不允许斜杠），本仓库把交付路径换成了客户端通道。
+- 已知限制：不判断当前模型是否收图（不收图时会在发送阶段被宿主拒绝）；不落盘 PNG。
+- 入口也支持 `/sketch`；文案跟随界面语言（中文「画一张」/ 英文「Sketch」）。
+
+### 提交前自查
+- [x] 仓库已公开
+- [ ] 已添加 GitHub topic：dsh-plugin
+- [x] README 包含安装命令
+- [x] 插件导出 apply(ctx) 模块
+- [x] 仓库根目录包含 package.json
+````
+
+## 提交前要做的两件事
+
+1. **发布 npm 包**（只有发了才会出现在 DSH 内的「插件中心」）
+   ```bash
+   npm login --registry=https://registry.npmjs.org
+   npm publish --registry=https://registry.npmjs.org
+   ```
+   注意本机 npm registry 指向的是 `registry.npmmirror.com`（只读镜像），
+   必须显式带 `--registry=https://registry.npmjs.org`。
+
+2. **给仓库加 topic**：GitHub 仓库页 → 右侧 About 旁齿轮 → Topics 填 `dsh-plugin`。
+
+## 收录之后
+
+详情页地址形如 `https://dsh-plugin.org/zh/plugins/dyguests/dsh-sketch`，
+可以在 README 顶部加收录徽章：
+
+```markdown
+[![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/dyguests/dsh-sketch)
+```

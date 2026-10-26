@@ -90,16 +90,20 @@ const ENDPOINT_SEGMENT_PATTERN = /^[A-Za-z0-9_$.-]+$/   // 不含 "/"
 ## 安装
 
 ```bash
-# 从 GitHub
+# 从 npm（推荐，能进 DSH 内的「插件中心」）
+dsh plugin --profile web add dsh-sketch
+
+# 或直接从 GitHub 源码
 dsh plugin --profile web add github:dyguests/dsh-sketch
 
-# 或本地目录（开发时用，改完不用重装）
+# 本地目录（改代码时用，改完不用重装）
 dsh plugin --profile web add file:/absolute/path/to/dsh-sketch
 ```
 
 装完**重启 dsh**（宿主半区只在启动时装载），刷新页面。
 
-> 目前只通过 GitHub 分发。`dsh-sketch` 这个 npm 名还空着，想发的话随时可以发。
+兼容：dsh `>=0.2.0`（`package.json` 的 `engines.dsh` 写的是 `>=0.2.0-0 <0.3.0`，
+覆盖 0.2.x 的 prerelease）。纯前端插件，不挑平台。
 
 ## 用法
 

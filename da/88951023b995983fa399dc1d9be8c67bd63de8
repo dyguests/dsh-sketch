@@ -1,0 +1,26 @@
+CHANGELOG.md
+  h_3553f4e32d4a9f 1-59
+LICENSE
+  h_3553f4e32d4a9f 1-21
+README.md
+  h_3553f4e32d4a9f 1-137
+cordis.patch.yml
+  h_3553f4e32d4a9f 1-28
+lib/client.js
+  h_3553f4e32d4a9f 1-664
+lib/index.js
+  h_3553f4e32d4a9f 1-452
+package.json
+  h_3553f4e32d4a9f 1-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "da88951023b995983fa399dc1d9be8c67bd63de8",
+  "prompts": {},
+  "humans": {
+    "h_3553f4e32d4a9f": {
+      "author": "fanhl <dyguests@qq.com>"
+    }
+  }
+}

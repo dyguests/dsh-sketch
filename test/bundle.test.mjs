@@ -115,6 +115,8 @@ test('apply() 往「+」菜单注册一个 sketch 动作', () => {
   assert.equal(action.ui.kind, 'action')
   assert.equal(typeof action.ui.run, 'function')
   assert.equal(typeof action.label(), 'string')
+  assert.equal(typeof action.description(), 'string')
+  assert.equal(typeof action.icon, 'function', '菜单行需要传图标组件，否则图标位是空的')
   assert.equal(action.available({ sessionId: 'any' }), true)
 })
 

@@ -47,7 +47,7 @@ MIT
 
 ### 提交前自查
 - [x] 仓库已公开
-- [ ] 已添加 GitHub topic：dsh-plugin
+- [x] 已添加 GitHub topic：dsh-plugin
 - [x] README 包含安装命令
 - [x] 插件导出 apply(ctx) 模块
 - [x] 仓库根目录包含 package.json

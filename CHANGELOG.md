@@ -1,5 +1,35 @@
 # Changelog
 
+## v1.4.0 — 深色外观
+
+深色主题下画布面板一直是白的 —— 因为样式里写的几个变量名**宿主根本没有**。
+这次换成宿主真正提供的 token。
+
+### 修复
+
+- 原来的 `--dsw-alias-bg-primary`、`--dsw-alias-bg-secondary`、
+  `--dsw-alias-accent-primary`、`--dsw-alias-status-success/danger`、
+  `--dsw-alias-label-on-accent` 在宿主里一个都不存在，于是全部落到硬编码的浅色兜底，
+  深色主题下就成了「深色界面里一块白板」。
+- 换成真实存在的 token：`--dsw-alias-bg-base` / `bg-layer-1`、`label-primary` /
+  `label-secondary`、`border-l1` / `border-l2`、`interactive-bg-hover`、
+  `state-success-primary` / `state-error-primary`、`button-primary-fill` /
+  `button-primary-hover`、`label-primary-inverted`。
+- 边框、hover、遮罩这类写死 `rgba(0,0,0,…)` 的改成中性灰或跟着 token 走，亮暗都成立。
+
+### 不变
+
+- **画布仍是白纸**。导出会作为图片附件进对话，深色底 + 黑笔在聊天里看不清，
+  所以绘图区固定白底，只让面板跟随主题。
+- 交互、调色盘、线宽、撤销 / 清空、导入 / 降级下载都没动。
+
+### 验证
+
+无头浏览器分别在 `prefers-color-scheme: light` / `dark` 下打开画布截图对比，
+两种主题都对；`docs/canvas-dark.png` 是深色下的样子。
+
+---
+
 ## v1.3.1 — README 补截图和功能清单
 
 只改文档，没有代码变动。

@@ -26,6 +26,11 @@ DeepSeek Harness（dsh）插件。前身是 LLYlab 的 `dsh-sketch-draft` 1.0.0 
 
 ![画布](./docs/canvas.png)
 
+**深色外观**下是同一套布局：面板、边框、按钮跟着主题走，只有画布保持白纸
+（导出会进对话，深色底 + 黑笔在聊天里看不清）：
+
+![深色外观](./docs/canvas-dark.png)
+
 ## 功能
 
 - **入口**：输入框「+」菜单里的「画一张 / Sketch」，或直接输入 `/sketch`
@@ -34,6 +39,8 @@ DeepSeek Harness（dsh）插件。前身是 LLYlab 的 `dsh-sketch-draft` 1.0.0 
   （客户端 `conversation.createDrafts()` + `composer.addAttachments()`）
 - **失败不撒谎**：附件通道被拒时退回**下载 PNG**，并在画布底部说明原因
 - **跟随界面语言**：读宿主同步的 `<html lang>`，中文「画一张」/ 英文「Sketch」
+- **深色外观**：颜色全部走宿主的主题 token（`--dsw-alias-*`），亮 / 暗两套自动适配；
+  画布本身固定白纸
 - **零依赖、纯客户端**：不需要宿主提供任何端点，宿主换传输层也不会整条链失效
 
 ---

@@ -100,8 +100,8 @@ function stripComments(source) {
 }
 
 test('bundle 身份与上游一致（同一套装载契约）', () => {
-  assert.equal(registration.id, 'dsh-sketch-draft')
-  assert.equal(exports.name, 'dsh-sketch-draft')
+  assert.equal(registration.id, 'dsh-sketch')
+  assert.equal(exports.name, 'dsh-sketch')
   assert.equal(typeof exports.apply, 'function')
   assert.deepEqual(exports.inject, ['slots', 'sessions'])
 })
@@ -125,7 +125,7 @@ test('画布仍挂在 conversation.input.left 上（菜单唤起它）', () => {
   exports.apply(ctx)
   assert.equal(ctx.registered.length, 1)
   assert.equal(ctx.registered[0].def.name, 'conversation.input.left')
-  assert.equal(ctx.registered[0].def.id, 'dsh-sketch-draft')
+  assert.equal(ctx.registered[0].def.id, 'dsh-sketch')
   assert.equal(typeof ctx.registered[0].component, 'function')
 })
 
@@ -148,5 +148,5 @@ test('交付链只用客户端的两个附件 API', () => {
 test('样式带归属，不与其它插件抢 DOM', () => {
   const src = readFileSync(clientPath, 'utf8')
   assert.ok(src.includes('data-plugin-css'))
-  assert.ok(src.includes('.dsd-'), '类名应统一 dsd- 前缀')
+  assert.ok(src.includes('.dsk-'), '类名应统一 dsk- 前缀')
 })

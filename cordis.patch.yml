@@ -1,12 +1,12 @@
-# dsh-sketch-draft — profile bundle patch.
+# dsh-sketch — profile bundle patch.
 #
 # 装法：
-#   dsh plugin --profile web add github:dyguests/dsh-sketch-draft
+#   dsh plugin --profile web add github:dyguests/dsh-sketch
 #
 # 这一行的唯一作用是「把本包当成一层 bundle」：profile 只有把包收进 layers，
 # 才会去读 package.json 的 `dsh.client`，把 lib/client.js 挂进浏览器。
 #
 # 宿主半区是空的（见 lib/index.js），没有配置项 —— 画布、导出、附件交付全在客户端。
 - insert:
-    - id: dsh-sketch-draft
-      name: 'dsh-sketch-draft'
+    - id: dsh-sketch
+      name: 'dsh-sketch'

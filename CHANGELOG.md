@@ -1,5 +1,37 @@
 # Changelog
 
+## v1.3.0 — 改名为 dsh-sketch
+
+包名 `dsh-sketch-draft` → **`dsh-sketch`**，仓库同步改为
+<https://github.com/dyguests/dsh-sketch>。
+
+### 为什么改
+
+1. **"draft" 不再成立**。在 dsh 里 draft 指输入框里那条没发出的消息；上游用它，是因为
+   它把 PNG 落盘、把路径写进草稿、还会按模型是否收图切模型。这些在 1.1.0 里全删了，
+   现在只剩「画 → 挂成附件」，没有草稿文本。
+2. **避不开的重名**。`dsh-sketch-draft` 这个 npm 名属于上游，而且是**在 0.2.1 上必然
+   报错那一版**：`dsh plugin add dsh-sketch-draft` 装到坏的，`github:dyguests/...` 才
+   是好的。同一个名字两种结果，谁照着名字装谁踩坑。
+
+### 变更
+
+- `package.json` name、`cordis.patch.yml` 的 loader id、客户端 bundle id
+  （`window.__ModuleLoader__.load({ id })`）、插槽 id、CSS 类前缀（`dsd-` → `dsk-`）
+  全部跟上。
+- 图标、说明、`/sketch` 触发名都不变 —— 本来就叫 sketch。
+
+### 升级
+
+```sh
+dsh plugin --profile web remove dsh-sketch-draft
+dsh plugin --profile web add github:dyguests/dsh-sketch
+```
+
+装完重启 dsh（包名变了，宿主半区要重新装载）。
+
+---
+
 ## v1.2.1 — 菜单项补上图标和说明
 
 上一版进「+」菜单后只显示一行「Sketch」，左边缺图标、右边缺说明，跟旁边的「文件 /

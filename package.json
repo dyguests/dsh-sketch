@@ -1,7 +1,7 @@
 {
-  "name": "dsh-sketch-draft",
-  "version": "1.2.1",
-  "description": "DSH 插件：输入框「+」旁的画板，随手画一张直接作为图片附件放进对话。纯客户端交付（conversation.createDrafts + composer.addAttachments），不依赖宿主 typert 端点，因此在 dsh 0.2.x 上不会出现「support 端点不可用」。Fork of LLYlab/dsh-sketch-draft.",
+  "name": "dsh-sketch",
+  "version": "1.3.0",
+  "description": "DSH 插件：输入框「+」菜单里的画板，随手画一张直接作为图片附件放进对话。纯客户端交付（conversation.createDrafts + composer.addAttachments），不依赖宿主 typert 端点，因此在 dsh 0.2.x 上不会出现「support 端点不可用」。前身是 LLYlab 的 dsh-sketch-draft。",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -34,11 +34,11 @@
   "author": "LLYlab (upstream 1.0.0); dyguests (fork 1.1.0)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dyguests/dsh-sketch-draft.git"
+    "url": "git+https://github.com/dyguests/dsh-sketch.git"
   },
-  "homepage": "https://github.com/dyguests/dsh-sketch-draft#readme",
+  "homepage": "https://github.com/dyguests/dsh-sketch#readme",
   "bugs": {
-    "url": "https://github.com/dyguests/dsh-sketch-draft/issues"
+    "url": "https://github.com/dyguests/dsh-sketch/issues"
   },
   "engines": {
     "node": ">=20"

@@ -23,7 +23,7 @@
 界面与体验
 
 ### 安装命令
-dsh plugin --profile web add dsh-sketch
+dsh plugin --profile web add github:dyguests/dsh-sketch
 
 ### 兼容与运行要求
 dsh >= 0.2.0（package.json 里 `engines.dsh` 为 `>=0.2.0-0 <0.3.0`），已在 0.2.1-rc.3 实测装载与使用；
@@ -53,17 +53,24 @@ MIT
 - [x] 仓库根目录包含 package.json
 ````
 
-## 提交前要做的两件事
+## 现在还差什么
 
-1. **发布 npm 包**（只有发了才会出现在 DSH 内的「插件中心」）
+1. **给仓库加 topic**（必须）：GitHub 仓库页 → 右侧 About 旁齿轮 → Topics 填
+   `dsh-plugin`。不加的话爬虫扫不到，提了也不会被收录。
+
+2. **开 Issue**：正文已在上文，粘到
+   <https://github.com/dshplugin/dsh-plugin-hub/issues/new>。
+
+3. **npm（暂缓，不影响收录）**：只有发了 npm 才会出现在 DSH 内的「插件中心」。
+   现在 `npmjs.com` 从这台机器访问被 Cloudflare 挡着（403），拿不到 token，
+   所以先用 GitHub 源码安装。哪天通了再补：
    ```bash
    npm login --registry=https://registry.npmjs.org
    npm publish --registry=https://registry.npmjs.org
    ```
    注意本机 npm registry 指向的是 `registry.npmmirror.com`（只读镜像），
-   必须显式带 `--registry=https://registry.npmjs.org`。
-
-2. **给仓库加 topic**：GitHub 仓库页 → 右侧 About 旁齿轮 → Topics 填 `dsh-plugin`。
+   必须显式带 `--registry=https://registry.npmjs.org`。发完不用重新提交，
+   站点刷新时会自动更新为 npm 安装命令。
 
 ## 收录之后
 

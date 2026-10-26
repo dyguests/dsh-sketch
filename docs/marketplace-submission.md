@@ -59,12 +59,8 @@ MIT
    <https://github.com/dshplugin/dsh-plugin-hub/issues/new>。
    仓库的 `dsh-plugin` topic 已经加好了。
 
-2. **收录后加徽章**：详情页地址形如
-   `https://dsh-plugin.org/zh/plugins/dyguests/dsh-sketch`，到时候把 README 顶部的
-   三枚徽章后面再接一枚：
-
-   ```markdown
-   [![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/dyguests/dsh-sketch)
-   ```
+2. **收录徽章已经加进 README 顶部了**（第四枚）。徽章图片本身是静态的，能正常渲染；
+   它指向的详情页 `https://dsh-plugin.org/plugins/dyguests/dsh-sketch` 在收录前是 404，
+   收录后自动生效，不用再改 README。
 
 npm 已经发布（`dsh-sketch@1.4.2`），安装命令就是上面那条，插件中心能认。

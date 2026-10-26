@@ -3,6 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/dsh-sketch?label=npm&color=cb3837)](https://www.npmjs.com/package/dsh-sketch)
 [![dsh](https://img.shields.io/badge/dsh-%3E%3D0.2.0-6366f1)](https://deepseek.com/harness)
 [![license](https://img.shields.io/npm/l/dsh-sketch?color=blue)](./LICENSE)
+[![Listed on dsh-plugin.org](https://dsh-plugin.org/badges/listed.svg)](https://dsh-plugin.org/plugins/dyguests/dsh-sketch)
 
 > 输入框「+」菜单里的一个画板：**随手画一张，直接作为图片附件放进对话。**
 

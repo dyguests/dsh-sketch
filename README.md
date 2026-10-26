@@ -1,3 +1,7 @@
+# 废弃
+
+[bmhty123/dsh-sketchpad](https://github.com/bmhty123/dsh-sketchpad)这个更好用
+
 # dsh-sketch
 
 [![npm version](https://img.shields.io/npm/v/dsh-sketch?label=npm&color=cb3837)](https://www.npmjs.com/package/dsh-sketch)

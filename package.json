@@ -1,7 +1,7 @@
 {
   "name": "dsh-sketch-draft",
-  "version": "1.0.0",
-  "description": "DSH 永久插件：输入框「+」旁的草图按钮 —— 现画一张，直接作为图片附件注入对话；当前模型不收图时先实时查模型表、切到视觉模型再注入，并给一键切回。判定全程实时（会话投影的 pending 模型 + 宿主模型表的 inputModalities），可用不上 DET 独立运行。Permanent DeepSeek Harness plugin: an inline sketch button that draws on a canvas and injects the picture into the conversation as a real image attachment; when the current model takes no images it re-checks the live model table, switches to a vision model, injects, and offers one-click switch-back. Runs standalone, fully independent of DET.",
+  "version": "1.1.0",
+  "description": "DSH 插件：输入框「+」旁的画板，随手画一张直接作为图片附件放进对话。纯客户端交付（conversation.createDrafts + composer.addAttachments），不依赖宿主 typert 端点，因此在 dsh 0.2.x 上不会出现「support 端点不可用」。Fork of LLYlab/dsh-sketch-draft.",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -17,28 +17,6 @@
     "CHANGELOG.md",
     "LICENSE"
   ],
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "platform": "web"
-    }
-  },
-  "dependencies": {
-    "@deepseek-ai/dsh-typert-protocol": "^0.1.7-rc.2",
-    "@deepseek-ai/schemastery": "^3.18.1"
-  },
-  "author": "L2959159224@Outlook.com",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LLYlab/DSHSketchDraft.git"
-  },
-  "homepage": "https://github.com/LLYlab/DSHSketchDraft#readme",
-  "bugs": {
-    "url": "https://github.com/LLYlab/DSHSketchDraft/issues"
-  },
   "keywords": [
     "dsh",
     "dsh-plugin",
@@ -49,8 +27,31 @@
     "draft",
     "canvas",
     "draw",
-    "vision",
     "image",
     "attachment"
-  ]
+  ],
+  "license": "MIT",
+  "author": "LLYlab (upstream 1.0.0); dyguests (fork 1.1.0)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyguests/dsh-sketch-draft.git"
+  },
+  "homepage": "https://github.com/dyguests/dsh-sketch-draft#readme",
+  "bugs": {
+    "url": "https://github.com/dyguests/dsh-sketch-draft/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/bundle.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  }
 }

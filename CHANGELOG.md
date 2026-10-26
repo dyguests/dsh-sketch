@@ -1,6 +1,49 @@
 # Changelog
 
-## v1.0.0 — 从 DET 拆出来的第一版
+## v1.1.0 — 换掉交付路径，让它在 dsh 0.2.1 上真的能导入
+
+**这是一个 fork**（https://github.com/dyguests/dsh-sketch-draft），基于上游
+[LLYlab/DSHSketchDraft](https://github.com/LLYlab/DSHSketchDraft) 1.0.0。上游的设计
+（实时判定模型是否收图、自动切视觉模型）保留在 git 历史里，本版只是把**已经失效的
+那一层**换掉。
+
+### 修复
+
+- **「无法确认当前模型是否支持图片（support 端点不可用）」不再出现**。
+  上游客户端调 `connection.rpc.call("/api", "dshSketchDraft/support", …)`，而 dsh
+  0.2.1 的 RPC 在发出前校验 endpoint（`/^[A-Za-z0-9_$.-]+$/`，**不允许斜杠**），
+  调用被 `assertTarget` 直接拒绝，`support` 永远拿不到，导入按钮也就无从判断该走
+  「挂附件」还是「存 PNG」。
+  现在不再向宿主问任何事，交付改走客户端本来就有的两个 API：
+  `conversation.createDrafts(sessionId, [file])` → `composer.shell(sessionId).addAttachments(ids)`。
+
+- **导入失败不再静默**：附件通道不可用（服务缺失 / `addAttachments` 返回 false）时，
+  回退为**下载 PNG**，并在画布底部如实说明原因，不谎报成功。
+
+### 移除（随之不再需要）
+
+- 宿主半区的四个 typert 端点（`status` / `support` / `save` / `routes`）——
+  `lib/index.js` 现在是空壳，只用来让本包成为 profile 的一层 bundle。
+- 「实时判定 + 自动切换视觉模型 + 一键切回」—— 依赖上面那套端点，一并下线。
+  以后如果有人按 0.2.x 的协议重接 typert，这块可以补回来。
+- `<workspace>/.dsh-drafts/*.png` 落盘 —— 现在只进输入框，不写磁盘。
+- 第三方依赖（`@deepseek-ai/dsh-typert-protocol`、`schemastery`）—— 本版零依赖。
+
+### 新增
+
+- `test/bundle.test.mjs`：用假的 `__ModuleLoader__` 按浏览器同一条路径装载
+  `lib/client.js`，断言它只注册 `conversation.input.left`、只用 `createDrafts` /
+  `addAttachments`，并且**代码里不出现任何 RPC / typert 调用** —— 这条守卫就是冲着
+  这次的回归写的。`pnpm test` 或 `node --test test/bundle.test.mjs`。
+
+### 升级注意
+
+- 版本号跳到 **1.1.0**：`dsh plugin remove dsh-sketch-draft` 再装一次，然后重启 dsh。
+- 画布逻辑尺寸仍是 1000×620，交互不变（5 色 / 4 档线宽 / 撤销 / 清空 / Esc 关闭）。
+
+---
+
+## v1.0.0 — 从 DET 拆出来的第一版（上游 LLYlab）
 
 把 DET（dsh-essential-tools）的草图功能拆成独立可安装、可发布的包 `dsh-sketch-draft`。
 拆的理由：这块**不需要 DET 的任何东西**（只依赖宿主的 `llm` / `sessions` /
